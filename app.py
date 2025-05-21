@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 import openai
 
@@ -7,8 +8,6 @@ app = Flask(__name__)
 def transcribe():
     data = request.get_json()
     video_url = data.get('video_url')
-
-    # Dummy response for testing
     return jsonify({
         "message": "Received URL",
         "video_url": video_url,
@@ -18,4 +17,6 @@ def transcribe():
     })
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
