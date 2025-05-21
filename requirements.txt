@@ -1,0 +1,8 @@
+flask
+openai
+yt_dlp
+moviepy
+pytube
+whisper
+deep_translator
+ffmpeg-python
